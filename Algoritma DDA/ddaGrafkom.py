@@ -1,3 +1,7 @@
+# Gading Raditya Pratama
+# 50422596
+# 3IA21
+
 import matplotlib.pyplot as plt
 
 def dda(x1, y1, x2, y2):
@@ -33,13 +37,26 @@ def dda(x1, y1, x2, y2):
 x1, y1 = 1, 2
 x2, y2 = 3, 6
 
+# Hitung gradien (m)
+if x2 - x1 != 0:
+    m = (y2 - y1) / (x2 - x1)
+else:
+    m = None  # Mengatasi pembagian dengan nol jika x1 == x2 (garis vertikal)
+
 # Selanjutnya dapatkan titik-titik garis menggunakan algoritma DDA
 x_vals, y_vals = dda(x1, y1, x2, y2)
 
 # Plot hasil garis
 plt.plot(x_vals, y_vals, marker='o')
-plt.title(f"Garis antara ({x1}, {y1}) dan ({x2}, {y2}) menggunakan DDA")
+plt.title('Persamaan Garis dengan Algoritma DDA')
 plt.xlabel("X")
 plt.ylabel("Y")
 plt.grid(True)
+
+# Tampilkan gradien di plot
+if m is not None:
+    plt.text(min(x_vals), min(y_vals), f'Gradien = {m:.2f}', fontsize=12, color='red')
+else:
+    plt.text(min(x_vals), min(y_vals), 'Gradien = Tak Terdefinisi', fontsize=12, color='red')
+
 plt.show()
