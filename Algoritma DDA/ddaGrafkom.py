@@ -1,7 +1,3 @@
-# Gading Raditya Pratama
-# 50422596
-# 3IA21
-
 import matplotlib.pyplot as plt
 
 def dda(x1, y1, x2, y2):
